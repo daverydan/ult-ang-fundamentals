@@ -1,8 +1,8 @@
-function MainController($scope) {
-  $scope.name = 'Todd';
-  $scope.likes = ['pizza', 'coke'];
+function MainController(a, b) {
+  a.name = 'Todd';
+  a.likes = ['pizza', 'coke'];
 }
 
 angular
   .module('app')
-  .controller('MainController', MainController);
+  .controller('MainController', ['$scope', '$rootScope', MainController]);
