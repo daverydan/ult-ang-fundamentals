@@ -1,8 +1,7 @@
-function MainController(a, b) {
-  a.name = 'Todd';
-  a.likes = ['pizza', 'coke'];
+function MainController() {
+  this.name = 'Todd';
 }
 
 angular
   .module('app')
-  .controller('MainController', ['$scope', '$rootScope', MainController]);
+  .controller('MainController', MainController);

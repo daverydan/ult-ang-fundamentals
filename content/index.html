@@ -9,8 +9,23 @@
 </head>
   <body>
 
+    <div ng-controller="MainController as main">
+      {{ main.name }}
+    </div>
+
+    <!-- Will be overridden -->
     <div ng-controller="MainController">
-      {{ name }}  
+      {{ name }}
+      <div ng-controller="AnotherController">
+        {{ name }} {{ name }}
+      </div>
+    </div>
+
+    <div ng-controller="MainController as main">
+      {{ main.name }}
+      <div ng-controller="AnotherController as another">
+        {{ another.name }} {{ main.name }}
+      </div>
     </div>
 
     <script src="js/app.js"></script>
